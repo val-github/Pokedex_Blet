@@ -1,0 +1,26 @@
+<link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+
+<style>
+  @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+</style>
+
+<p>
+  <mat-toolbar color="primary">
+    <span class="fill-blank"></span>
+    <span>
+      <h1>
+        Pokédex
+      </h1></span>
+    <span class="fill-blank"></span>
+    <span>
+      <a>
+        Equipe : 
+      </a>
+      <button mat-icon-button (click)="demandeConnection()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar>
+</p>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+h1
+{
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 4ch;
+  color: rgb(255, 255, 0);
+}
+
+a
+{
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 2ch;
+}
+
+.fill-blank {
+  flex: 1 1 auto;
+}
+
+p
+{
+  height: 3%;
+}
+
+router-outlet
+{
+  width: 100%;
+  height: 95%;
+  margin: 0;
+  padding: 3%;
+}

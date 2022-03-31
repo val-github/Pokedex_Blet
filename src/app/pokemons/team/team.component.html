@@ -1,0 +1,146 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <app-pokemon-list (outputId)="onChange($event)"></app-pokemon-list>
+  </mat-sidenav>
+  <mat-sidenav-content #sidenav style="overflow: auto; height: calc(120vh - 8px); width: auto">
+      <mat-grid-list cols="4" rowHeight="80px">
+
+        <mat-grid-tile colspan="1">
+          <button mat-icon-button (click)="goBack()">
+            <mat-icon>
+              keyboard_backspace
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile colspan="2">
+          <button mat-icon-button (click)="envoyerEquipe()">
+            <mat-icon>
+              save
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <button mat-icon-button (click)="supprEquipe(1,1)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,1)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId1}}.png">
+          <p matLine routerLink="pokemon/{{pokId1}}" >
+            {{pok1?.name}}
+          </p>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId2}}.png">
+          <p matLine routerLink="pokemon/{{pokId2}}" >
+            {{pok2?.name}}
+          </p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,2)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button>
+          <button mat-icon-button (click)="supprEquipe(2, 2)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <button mat-icon-button (click)="supprEquipe(3, 3)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,3)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId3}}.png">
+          <p matLine routerLink="pokemon/{{pokId3}}" >
+            {{pok3?.name}}
+          </p>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId4}}.png">
+          <p matLine routerLink="pokemon/{{pokId4}}" >
+            {{pok4?.name}}
+          </p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,4)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button><button mat-icon-button (click)="supprEquipe(4, 4)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <button mat-icon-button (click)="supprEquipe(5, 5)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,5)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId5}}.png">
+          <p matLine routerLink="pokemon/{{pokId5}}" >
+            {{pok5?.name}}
+          </p>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1" style="border: 2px solid white;">
+          <img matListAvatar src="assets/img/sprites/{{pokId6}}.png">
+          <p matLine routerLink="pokemon/{{pokId6}}" >
+            {{pok6?.name}}
+          </p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-icon-button (click)="ajoutEquipe(pokIdAff,6)">
+            <mat-icon [ngStyle]="{'color':'blue'}">
+              add
+            </mat-icon>
+          </button>
+          <button mat-icon-button (click)="supprEquipe(6, 6)">
+            <mat-icon [ngStyle]="{'color':'red'}">
+              delete_forever
+            </mat-icon>
+          </button>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+
+      <app-pokemon-detail *ngIf='pokIdAff' [pokIdInput]="pokIdAff" (retour)="onRetour()"></app-pokemon-detail>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,34 @@
+<div class="login">
+  <h2 class="login-header">S'identifier</h2>
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="connection()">
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls }">
+      <input matInput placeholder="email" formControlName="email" [formControl]="email" required>
+    </p>
+
+    <div *ngIf="isSubmitted && formControls" class="help-block">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls" class="help-block">
+      <div *ngIf="formControls"><font color="red">Mot de passe invalide</font></div>
+    </div>
+
+
+    <p>
+      <input type="submit" value="connection" (onclick)="connection()">
+    </p>
+
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>
+        keyboard_backspace
+      </mat-icon>
+    </button>
+  </form>
+</div>
